@@ -172,5 +172,7 @@ git commit -m "Update submodule"
 ## 状態の検証
 
 ```
+git diff --submodule
+git submodule status
 git submodule foreach 'echo $sm_path `git rev-parse HEAD`'
 ```
