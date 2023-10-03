@@ -45,6 +45,34 @@ git pull
 
 ## ローカルリポジトリの初期化・更新
 
+`-` はコミットIDの参照情報を持っているが、実際のソースコードが checkout されていない状態
+
+```
+git submodule status
+```
+
+```
+ 11aab291062d666e60a3c61c393bcd3afdffb85c submodule_1 (heads/main)
+-11aab291062d666e60a3c61c393bcd3afdffb85c submodule_2
+```
+
+
+
+
+```
+git submodule status
+```
+
+次の状態になればいい。
+
+```
+ 11aab291062d666e60a3c61c393bcd3afdffb85c submodule_4 (heads/main)
+ 11aab291062d666e60a3c61c393bcd3afdffb85c submodule_5 (heads/main)
+```
+
+
+
+
 
 
 サブモジュールがあるコミットの状態になります。
@@ -176,3 +204,6 @@ git diff --submodule
 git submodule status
 git submodule foreach 'echo $sm_path `git rev-parse HEAD`'
 ```
+
+
+
