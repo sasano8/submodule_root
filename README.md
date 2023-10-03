@@ -113,7 +113,7 @@ SUBMODULE_DIR=submodule_1
 git submodule deinit $SUBMODULE_NAME
 git rm $SUBMODULE_DIR  # ディレクトリが削除され、.gitmodules の更新とともにステージングされます
 rm -rf .git/modules/$SUBMODULE_DIR
-git commit -m"Removed Submodule"
+git commit -m"remove submodule_1"
 git push
 ```
 
