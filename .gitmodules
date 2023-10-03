@@ -1,0 +1,3 @@
+[submodule "submodule_1"]
+	path = submodule_1
+	url = git@github.com:sasano8/submodule_1.git
