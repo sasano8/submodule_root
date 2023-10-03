@@ -161,7 +161,16 @@ git commit -m "Update submodule"
 - submodule を削除後に、別のローカルリポジトリで pull を実行
     - submodule が削除される
     - submodule が削除されない（シチュエーションによる）
+        - 単純にディレクトリを削除すればいいのだが、どのサブモジュールが削除されたか分かりにくい
+
 
 
 
 - git submodule update の実行前にすべての変更をコミットすることを忘れないこと!変更は上書きされます。
+
+
+## 状態の検証
+
+```
+git submodule foreach 'echo $sm_path `git rev-parse HEAD`'
+```
