@@ -217,3 +217,22 @@ git submodule foreach 'echo $sm_path `git rev-parse HEAD`'
 
 
 
+## 親リポジトリ管理者用
+
+サブモジュールでdevelopの最新コミットを参照させる。
+
+```
+git submodule foreach 'git checkout develop && git pull origin develop'
+```
+
+サブモジュールのパスを取得する
+
+```
+grep path .gitmodules | sed 's/.*= //'
+```
+
+サブモジュールのパスを取得し、それを `git add` する
+
+```
+grep path .gitmodules | sed 's/.*= //' | xargs git add
+```
