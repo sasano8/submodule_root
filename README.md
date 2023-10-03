@@ -71,6 +71,16 @@ git submodule status
 ```
 
 
+```
++11aab291062d666e60a3c61c393bcd3afdffb85c submodule_1 (heads/main-2-g11aab29)
+ 11aab291062d666e60a3c61c393bcd3afdffb85c submodule_5 (heads/main)
+```
+
+
+- `+` : サブモジュールの現在のコミットは、親リポジトリが指定（参照）しているコミットと異なる。
+- `-` : サブモジュールのコンテンツが設定されていない。
+- `U` : サブモジュールのコンテンツがコンフリクトしている。
+- 何もなし : サブモジュールが正しくチェックアウトされており、親リポジトリが指定しているコミットを指している。
 
 
 
@@ -139,7 +149,7 @@ cat .gitmodules
 SUBMODULE_NAME=submodule_1
 SUBMODULE_DIR=submodule_1
 git submodule deinit $SUBMODULE_NAME
-git --cached rm $SUBMODULE_DIR  # ディレクトリが削除され、.gitmodules の更新とともにステージングされます
+git rm --cached $SUBMODULE_DIR  # ディレクトリが削除され、.gitmodules の更新とともにステージングされます
 rm -rf .git/modules/$SUBMODULE_DIR
 git commit -m"remove submodule_3"
 git push
