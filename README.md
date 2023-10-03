@@ -78,11 +78,23 @@ git submodule update --init -- path/to/your/submodule
 git submodule add git@github.com:sasano8/submodule_1.git submodule_1
 ```
 
+サブモジュールを追加すると、次のファイル・サブモジュールが stagging される。
+
+- .gitmodules
+- submodule_1
+
+```
+git commit -m"add submodule_1"
+```
+
+
+
+
 
 管理しているサブモジュールを確認する。
 
 ```
-it submodule status
+git submodule status
 ```
 
 管理しているサブモジュールの詳細を確認する。
