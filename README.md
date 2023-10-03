@@ -150,3 +150,18 @@ git commit -m "Update submodule"
     - 子ローカルリポジトリ
 - 子リポジトリ開発者
     - 子ローカルリポジトリ
+
+
+## 動作検証
+
+
+- submodule を追加後に、別のローカルリポジトリで pull を実行
+    - submodule のディレクトリが作成される
+    - pull は実行されないので、`git submodule update --init`が必要。
+- submodule を削除後に、別のローカルリポジトリで pull を実行
+    - submodule が削除される
+    - submodule が削除されない（シチュエーションによる）
+
+
+
+- git submodule update の実行前にすべての変更をコミットすることを忘れないこと!変更は上書きされます。
